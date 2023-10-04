@@ -15,10 +15,18 @@
 package main
 
 import (
+	"C"
+
 	_ "github.com/fatedier/frp/assets/frpc"
 	"github.com/fatedier/frp/cmd/frpc/sub"
 )
 
+//export main
 func main() {
-	sub.Execute()
+	// sub.Execute()
+}
+
+//export frpc
+func frpc(cfgFilePath string) {
+	sub.Execute(cfgFilePath)
 }

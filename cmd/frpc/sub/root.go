@@ -94,10 +94,11 @@ func runMultipleClients(cfgDir string) error {
 	return err
 }
 
-func Execute() {
-	if err := rootCmd.Execute(); err != nil {
-		os.Exit(1)
-	}
+func Execute(cfgFilePath string) {
+	// if err := rootCmd.Execute(); err != nil {
+	// 	os.Exit(1)
+	// }
+	runClient(cfgFilePath)
 }
 
 func handleTermSignal(svr *client.Service) {
