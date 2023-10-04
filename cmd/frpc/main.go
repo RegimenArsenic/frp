@@ -14,9 +14,8 @@
 
 package main
 
+import "C"
 import (
-	"C"
-
 	_ "github.com/fatedier/frp/assets/frpc"
 	"github.com/fatedier/frp/cmd/frpc/sub"
 )
@@ -27,6 +26,7 @@ func main() {
 }
 
 //export frpc
-func frpc(cfgFilePath string) {
-	sub.Execute(cfgFilePath)
+func frpc(cfgFilePath *C.char) {
+	path := C.GoString(cfgFilePath)
+	sub.Execute(path)
 }

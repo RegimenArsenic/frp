@@ -75,7 +75,7 @@ extern "C" {
 #endif
 
 extern __declspec(dllexport) void main();
-extern __declspec(dllexport) void frpc(GoString cfgFilePath);
+extern __declspec(dllexport) void frpc(char* cfgFilePath);
 
 #ifdef __cplusplus
 }
